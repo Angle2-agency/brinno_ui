@@ -1,0 +1,36 @@
+# .NET Core / Blazor
+bin/
+obj/
+*.db
+*.db-shm
+*.db-wal
+*.log
+secrets.json
+
+# DevExpress Blazor
+wwwroot/css/site.css
+wwwroot/css/site.css.map
+wwwroot/css/bootstrap/bootstrap.min.css
+wwwroot/css/bootstrap/bootstrap.min.css.map
+wwwroot/css/*.min.css
+
+# SCSS компіляція
+node_modules/
+wwwroot/css/*.css.map
+
+# Rider / VS Code / Visual Studio
+.idea/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.cache
+*.sw?
+*.bak
+
+# NPM та package-lock.json (якщо ти не зберігаєш їх у репозиторії)
+package-lock.json
+
+# OS файли
+.DS_Store
+Thumbs.db
