@@ -1,0 +1,94 @@
+﻿@inject NavigationManager NavManager;
+@rendermode InteractiveServer
+
+<div id="sidebar" class="bg-white">
+    <DxGridLayout CssClass="page-layout" RowSpacing="1.5rem">
+        <Rows>
+            <DxGridLayoutRow Areas="header" Height="auto"></DxGridLayoutRow>
+            <DxGridLayoutRow Areas="navigation"></DxGridLayoutRow>
+            <DxGridLayoutRow Areas="footer" Height="auto"></DxGridLayoutRow>
+        </Rows>
+        <Columns>
+            <DxGridLayoutColumn></DxGridLayoutColumn>
+        </Columns>
+        <Items>
+            <DxGridLayoutItem Area="header" CssClass="pt-4 ps-3 pe-1">
+                <Template>
+                    <DxStackLayout CssClass="w-100 ch-480">
+                        <Items>
+                            <DxStackLayoutItem>
+                                <Template>
+                                    <img class="logo" src="images/logo_main.svg" alt="Brinno logo" />
+                                </Template>
+                            </DxStackLayoutItem>
+                            <DxStackLayoutItem Length="auto">
+                                <Template>
+                                    <DxButton
+                                        onclick="(document.getElementById('sidebar').classList.toggle('auto-expanded'), document.getElementById('menu-top').classList.toggle('hidden'))"
+                                        CssClass="menu-button" />
+                                </Template>
+                            </DxStackLayoutItem>
+                        </Items>
+                    </DxStackLayout>
+                </Template>
+            </DxGridLayoutItem>
+            <DxGridLayoutItem Area="navigation" CssClass="layout-item">
+                <Template>
+                    <DxMenu Orientation="@Orientation.Vertical" CssClass="menu">
+                        <Items>
+                            <DxMenuItem NavigateUrl="/" Text="Dashboard"
+                                CssClass="@($"menu-item {GetActiveClass("/")}")" IconCssClass="icon dashboard-icon">
+                            </DxMenuItem>
+                            <DxMenuItem NavigateUrl="/sites" Text="Sites" CssClass="menu-item"
+                                IconCssClass="icon sites-icon"></DxMenuItem>
+                            <DxMenuItem NavigateUrl="/projects" Text="Projects" CssClass="menu-item"
+                                IconCssClass="icon projects-icon"></DxMenuItem>
+                            <DxMenuItem NavigateUrl="/cameras" Text="Cameras" CssClass="menu-item"
+                                IconCssClass="icon cameras-icon"></DxMenuItem>
+                            <DxMenuItem NavigateUrl="/files" Text="Files" CssClass="menu-item"
+                                IconCssClass="icon files-icon"></DxMenuItem>
+                        </Items>
+                    </DxMenu>
+                </Template>
+            </DxGridLayoutItem>
+            <DxGridLayoutItem Area="footer" CssClass="footer">
+                <Template>
+                    <DxMenu Orientation="@Orientation.Vertical" CssClass="menu">
+                        <Items>
+                            <DxMenuItem NavigateUrl="/faq" Text="FAQ" CssClass="menu-item" IconCssClass="icon faq-icon">
+                            </DxMenuItem>
+                            <DxMenuItem NavigateUrl="/about" Text="About Brinno" CssClass="menu-item about-brinno"
+                                IconCssClass="icon about-icon"></DxMenuItem>
+                        </Items>
+                    </DxMenu>
+                    <DxAccordion CssClass="profile">
+                        <Items>
+                            <DxAccordionItem Text="Lars Fleckenstein" CssClass="accordion-item"
+                                IconCssClass="icon profile-icon">
+                                <ContentTemplate>
+                                    <DxMenu Orientation="@Orientation.Vertical" CssClass="menu">
+                                        <Items>
+                                            <DxMenuItem NavigateUrl="/profile" Text="Profile details"
+                                                CssClass="menu-item">
+                                            </DxMenuItem>
+                                            <DxMenuItem NavigateUrl="/subscription" Text="Subscription"
+                                                CssClass="menu-item">
+                                            </DxMenuItem>
+                                        </Items>
+                                    </DxMenu>
+                                </ContentTemplate>
+                            </DxAccordionItem>
+                        </Items>
+                    </DxAccordion>
+                </Template>
+            </DxGridLayoutItem>
+        </Items>
+    </DxGridLayout>
+</div>
+
+@code {
+    private string GetActiveClass(string url)
+    {
+        return NavManager.Uri.EndsWith(url, StringComparison.OrdinalIgnoreCase) ? "active" : "";
+    }
+}

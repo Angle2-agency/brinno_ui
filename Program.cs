@@ -1,5 +1,5 @@
 ﻿using MyBlazorServerApp.Services;
-using MyBlazorServerApp.Components;
+using MyBlazorServerApp;
 
 var builder = WebApplication.CreateBuilder(args);
 

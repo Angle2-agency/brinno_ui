@@ -1,0 +1,36 @@
+﻿@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
+
+<div class="page">
+    <DxGridLayout CssClass="page-layout">
+        <Rows>
+            <DxGridLayoutRow Areas="sidebar header" Height="auto"></DxGridLayoutRow>
+            <DxGridLayoutRow Areas="sidebar content"></DxGridLayoutRow>
+        </Rows>
+        <Columns>
+            <DxGridLayoutColumn Width="auto" />
+            <DxGridLayoutColumn />
+        </Columns>
+        <Items>
+            <DxGridLayoutItem Area="sidebar" CssClass="layout-sidebar">
+                <Template>
+                    <NavMenu />
+                </Template>
+            </DxGridLayoutItem>
+            <DxGridLayoutItem Area="content" CssClass="content">
+                <Template>
+                    <header class="header ps-3 pe-4">
+                        <div class="d-flex align-items-center gap-3">
+                            <NavLink id="menu-top" class="button-link hidden"
+                                onclick="(document.getElementById('sidebar').classList.toggle('auto-expanded'), document.getElementById('menu-top').classList.toggle('hidden'))">
+                                <DxButton CssClass="menu-button" IconCssClass="icon icon-menu"></DxButton>
+                            </NavLink>
+                            <h1>Dashboard</h1>
+                        </div>
+                    </header>
+                    @Body
+                </Template>
+            </DxGridLayoutItem>
+        </Items>
+    </DxGridLayout>
+</div>

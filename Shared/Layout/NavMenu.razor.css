@@ -1,0 +1,175 @@
+﻿#sidebar {
+    width: 17rem;
+    transition: transform 0.1s ease-out;
+    height: 100%;
+    max-height: 100%;
+    /* background-image: linear-gradient(180deg, var(--bs-primary) 0%, var(--bs-black) 150%); */
+    display: block;
+}
+#sidebar.auto-expanded {
+    display: none;
+}
+
+
+::deep .sidebar-header {
+    padding: 1.5rem 1rem;
+}
+
+
+
+
+
+::deep .menu-button {    
+    width: 2.5rem;
+    height: 2.5rem;
+    mask-image: url("images/icons/menu-fill.svg");
+    mask-size: 24px 24px;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    background-color: #6D6E73;    
+}
+
+::deep .menu.display-mobile {
+    margin-bottom: 2rem;
+}
+
+::deep .menu {
+    background-color: inherit;
+}
+
+
+
+::deep .menu-item .dxbl-btn {
+    min-height: 48px;
+    padding: 0.375rem 1rem;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%; 
+}
+::deep .menu-item .dxbl-btn .dxbl-menu-item-text-container {
+    margin-left: 12px;
+}
+
+::deep .menu-item .dxbl-btn:hover::before {
+    background-color: #FFD6AC!important;
+    opacity: 1!important;
+}
+
+::deep .menu-item.active .dxbl-btn {
+    background-color: #F08833!important;
+    color: #fff!important;    
+}
+
+::deep .menu-item.active .dxbl-btn .icon {
+    background-color: #fff;
+}
+
+::deep .menu-item.active .dxbl-btn::before {
+    display: none;
+}
+
+
+::deep .icon {
+    width: 1.125rem;
+    height: 1.125rem;        
+    mask-position: center;
+    mask-repeat: no-repeat;    
+    margin: 0;
+    background-color: #6D6E73;    
+}
+
+
+::deep .dashboard-icon {
+    mask-image: url("images/icons/charts.svg");
+}
+
+::deep .sites-icon {
+    mask-image: url("images/icons/sites.svg");
+    
+}
+
+::deep .projects-icon {
+    mask-image: url("images/icons/document.svg");
+}
+
+::deep .cameras-icon {
+    mask-image: url("images/icons/camera.svg");
+}
+
+::deep .files-icon {
+    mask-image: url("images/icons/picture.svg");
+}
+
+
+::deep .faq-icon {
+    mask-image: url("images/icons/question.svg");
+}
+
+::deep .about-icon {
+    background-image: url("images/brinno.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+::deep .profile-icon {
+    mask-image: url("images/icons/profile.svg");
+}
+
+
+
+
+::deep .about-brinno .dxbl-menu-item-text-container {
+    background: url("images/icons/external-link.svg") no-repeat right center / 18px 18px;
+    width: 100%;
+    padding-right: 24px;
+}
+
+::deep .footer {
+    padding: 1.5rem 0;
+}
+
+::deep .profile .dxbl-group-header {
+    flex-direction: row-reverse;
+    min-height: 48px;
+    padding: 0.375rem 1rem;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+    border:none;
+}
+
+::deep .profile .accordion-item.expanded {
+    background-color: #FFF9EE;
+}
+
+::deep .profile .accordion-item .dxbl-menu-item-text-container {
+    margin-left: 24px;
+}
+
+::deep .profile .dxbl-group-header .dxbl-accordion-item-content {
+    margin-left: 0;
+}
+
+::deep .profile .dxbl-group-header .dxbl-image {
+    color: #6D6E73!important;
+}
+
+::deep .profile .dxbl-group-header::before  {
+    display: none;
+}
+
+::deep .profile .dxbl-group-header:hover  {
+    background-color: #FFD6AC!important;    
+}
+
+#sidebar.auto-expanded ::deep .layout-item {
+    display: block;
+}
+
+#sidebar.auto-expanded ::deep .footer {
+    display: block;
+}
+

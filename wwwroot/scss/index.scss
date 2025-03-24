@@ -1,7 +1,9 @@
 // @import url("open-iconic/font/css/open-iconic-bootstrap.min.css");
-@import "./_typography";
-@import "./variables";
-@import "../../node_modules/bootstrap/scss/bootstrap";
+
+@import './variables';
+@import '../../node_modules/bootstrap/scss/bootstrap';
+@import './functions';
+@import './_typography';
 
 html,
 body {
@@ -11,7 +13,7 @@ body {
   flex-direction: column;
 }
 
-.valid.modified:not([type="checkbox"]) {
+.valid.modified:not([type='checkbox']) {
   outline: 1px solid #26b050;
 }
 
