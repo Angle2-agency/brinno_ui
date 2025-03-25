@@ -142,8 +142,6 @@
       background-color: #ffd6ac !important;
       opacity: 1 !important;
     }
-    .dxbl-image {
-    }
   }
   &.search-control {
     .dxbl-btn-icon {
@@ -231,4 +229,74 @@
 .dxbl-checkbox.dxbl-checkbox-radio.dxbl-lg {
   --dxbl-checkbox-radio-check-size: 0.75rem;
   --dxbl-checkbox-radio-size: 1.25rem;
+}
+
+.dxbl-checkbox.dxbl-checkbox-switch {
+  --dxbl-checkbox-switch-width: 2.5rem;
+  --dxbl-checkbox-switch-height: 1.25rem;
+  --dxbl-checkbox-switch-element-size: 1rem;
+  --dxbl-checkbox-switch-element-unchecked-bg: #9b9da1;
+  --dxbl-checkbox-switch-element-disabled-bg: #9b9da1;
+  --dxbl-checkbox-unchecked-focus-shadow-color: #1e1e20;
+  --dxbl-checkbox-checked-focus-shadow-color: #1e1e20;
+  &.dxbl-checkbox-unchecked {
+    --dxbl-checkbox-switch-element-margin: 0.05rem;
+    &.dxbl-sm {
+      --dxbl-checkbox-switch-element-margin: 0.05rem;
+    }
+    &.dxbl-lg {
+      --dxbl-checkbox-switch-element-margin: 0.05rem;
+    }
+  }
+  &.dxbl-sm {
+    --dxbl-checkbox-switch-width: 2rem;
+    --dxbl-checkbox-switch-height: 1rem;
+    --dxbl-checkbox-switch-element-size: 0.75rem;
+  }
+  &.dxbl-lg {
+    --dxbl-checkbox-switch-width: 3.0625rem;
+    --dxbl-checkbox-switch-height: 1.5rem;
+    --dxbl-checkbox-switch-element-size: 1.25rem;
+  }
+}
+
+.dxbl-checkbox.dxbl-checkbox-switch.dxbl-checkbox-unchecked
+  .dxbl-checkbox-check-element {
+  background-color: transparent;
+  border: 1px solid $gray-200;
+}
+
+.dxbl-checkbox.dxbl-checkbox-switch.dxbl-checkbox-unchecked
+  .dxbl-checkbox-check-element {
+  opacity: 1;
+}
+
+.dxbl-checkbox.dxbl-checkbox-switch.dxbl-readonly.dxbl-checkbox-unchecked
+  .dxbl-checkbox-check-element {
+  background-color: $gray-200;
+  opacity: 1;
+}
+
+.dxbl-checkbox.dxbl-checkbox-switch.dxbl-readonly
+  .dxbl-checkbox-check-element::before {
+  background-color: $gray-400;
+}
+
+.dxbl-checkbox.dxbl-checkbox-switch.dxbl-readonly .dxbl-checkbox-check-element {
+  background-color: $gray-200;
+  &::before {
+    background-color: $gray-400;
+  }
+}
+
+.dxbl-checkbox.dxbl-checkbox-switch:not(.dxbl-disabled):not(:disabled):not(
+    .dxbl-readonly
+  ).dxbl-checkbox-unchecked:not(.dxbl-disabled):not(:disabled):hover
+  .dxbl-checkbox-check-element {
+  &::before {
+    background-color: $gray-900;
+    opacity: 1;
+  }
+  background-color: transparent;
+  opacity: 1;
 }

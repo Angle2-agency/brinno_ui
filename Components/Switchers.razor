@@ -1,21 +1,18 @@
 <section class="w-50 mx-auto">
-    <h3>Checkboxes</h3>
+    <h3>Switchers</h3>
     <fieldset>
-        <div class="d-flex align-items-center">
-            <DxCheckBox @bind-Checked="@SelectAllState">
-                Select All
-            </DxCheckBox>
-        </div>
         <div class="pt-2 ps-4 d-flex flex-column gap-2">
             <div class="d-flex align-items-center justify-content-between">
-                <DxCheckBox @bind-Checked="@Multimedia" SizeMode="SizeMode.Small">Small Size
+                <DxCheckBox CheckType="CheckType.Switch" @bind-Checked="@Multimedia" SizeMode="SizeMode.Small">Small
+                    Size</DxCheckBox>
+            </div>
+            <div class="d-flex align-items-center justify-content-between">
+                <DxCheckBox CheckType="CheckType.Switch" @bind-Checked="@AirConditioning">Medium Size
                 </DxCheckBox>
             </div>
             <div class="d-flex align-items-center justify-content-between">
-                <DxCheckBox @bind-Checked="@AirConditioning">Medium Size</DxCheckBox>
-            </div>
-            <div class="d-flex align-items-center justify-content-between">
-                <DxCheckBox @bind-Checked="@ParkingSensors" SizeMode="SizeMode.Large">Large Size </DxCheckBox>
+                <DxCheckBox CheckType="CheckType.Switch" @bind-Checked="@ParkingSensors" SizeMode="SizeMode.Large">Large
+                    Size </DxCheckBox>
             </div>
         </div>
     </fieldset>
@@ -75,14 +72,8 @@
         price += HeatedSeats ? 230 : 0;
         return price;
     }
-    string GetCssClass(bool selected) => selected ? string.Empty : " dx-demo-text-strikethrough";
-    string GetLabelCssClass(SizeMode sizeMode)
-    {
-        var result = "dx-demo-label";
-        if (sizeMode != SizeMode.Medium)
-            result += sizeMode == SizeMode.Large ? " dx-demo-large" : " dx-demo-small";
-        return result;
-    }
+
+
     [Flags]
     enum CarOptions
     {
