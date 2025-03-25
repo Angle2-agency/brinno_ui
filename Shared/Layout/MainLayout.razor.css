@@ -9,6 +9,25 @@
     align-items: center;
     min-height: 88px;    
     border-bottom: 1px solid #E5E5E8;
+    background-color: var(--bs-body-bg);
+    position: sticky;
+    top: 0;
+    z-index: 10;    
+}
+
+.btn.new {
+    position: relative;    
+}
+.btn.new::after {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--bs-primary);
+    position: absolute;
+    top: 8px;
+    right: 12px;
 }
 
 .header h1 {

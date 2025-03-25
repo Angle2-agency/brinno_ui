@@ -1,38 +1,145 @@
-﻿@page "/"
+﻿@rendermode InteractiveServer
+@page "/"
 <PageTitle>Welcome</PageTitle>
 
 <div class="main-content">
-    <DxGridLayout CssClass="welcome-gridlayout" RowSpacing="3rem">
-        <Rows>
-            <DxGridLayoutRow Height="auto" Areas="header"></DxGridLayoutRow>
-            <DxGridLayoutRow Height="auto" Areas="cards"></DxGridLayoutRow>
-        </Rows>
-        <Items>
-            <DxGridLayoutItem Area="header" CssClass="title">
-                <Template>
-                    <div class="title-header-text">Hello Scooter)Ok!</div>
-                    <div class="title-content-text">Welcome to your new DevExpress Blazor Application</div>
-                    <div id="scooterok">$font-size-base</div>
-                </Template>
-            </DxGridLayoutItem>
-            <DxGridLayoutItem Area="cards" CssClass="welcome-cards">
-                <Template>
-                    <NavLink class="welcome-card" href="/counter">
-                        <svg class="welcome-card-img" alt="counter card">
-                            <use href="images/cards.svg#counter"></use>
-                        </svg>
-                        <div class="welcome-card-text">Counter</div>
-                        <div class="welcome-card-back"></div>
-                    </NavLink>
-                    <NavLink class="welcome-card" href="/weather">
-                        <svg class="welcome-card-img" alt="weather card">
-                            <use href="images/cards.svg#weather"></use>
-                        </svg>
-                        <div class="welcome-card-text">Weather</div>
-                        <div class="welcome-card-back"></div>
-                    </NavLink>
-                </Template>
-            </DxGridLayoutItem>
-        </Items>
-    </DxGridLayout>
+    <div class="d-flex flex-column gap-5 text-center py-5">
+        @* Typography *@
+        <section>
+            <h1>h1. heading</h1>
+            <h2>h2. heading</h2>
+            <h3>h3. heading</h3>
+            <h4>h4. heading</h4>
+            <h5>h5. heading</h5>
+            <h6>h6. heading</h6>
+            <p>You can use the mark tag to <mark>highlight</mark> text.</p>
+            <p><del>This line of text is meant to be treated as deleted text.</del></p>
+            <p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+            <p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+            <p><u>This line of text will render as underlined.</u></p>
+            <p><small>This line of text is meant to be treated as fine print.</small></p>
+            <p><strong>This line rendered as bold text.</strong></p>
+            <p><em>This line rendered as italicized text.</em></p>
+        </section>
+
+        @* Shadows *@
+        <section>
+            <h3>Shadows</h3>
+            <ul class="shadow-list">
+                <li class="shadow-sm rounded-4"></li>
+                <li class="shadow rounded-4"></li>
+                <li class="shadow-lg rounded-4"></li>
+            </ul>
+        </section>
+
+        @* Buttons *@
+        <section>
+            <h3>Buttons</h3>
+            <div class="d-flex gap-2 flex-wrap justify-content-center">
+                <button type="button" class="btn btn-dark">Bootstrap Dark</button>
+                <button type="button" class="btn btn-primary">Bootstrap Primary</button>
+                <DxButton CssClass="btn btn-primary">Blazor Primary</DxButton>
+                <button type="button" disabled class="btn btn-primary">Bootstrap Disabled</button>
+                <button type="button" class="btn btn-light">Bootstrap Light</button>
+                <button type="button" class="btn btn-warning">Bootstrap Warning</button>
+                <button type="button" class="btn btn-danger">Bootstrap Danger</button>
+                <button type="button" class="btn btn-link">Bootstrap Link</button>
+                <button type="button" class="btn btn-light btn-icon">
+                    <img src="/images/icons/Plus.svg" alt="">
+                </button>
+                <button type="button" class="btn btn-dark">
+                    <img src="/images/icons/Plus-white.svg" alt="">
+                    Icon L
+                </button>
+                <button type="button" class="btn btn-primary">
+                    Icon R
+                    <img src="/images/icons/Plus-white.svg" alt="">
+                </button>
+            </div>
+        </section>
+
+        @* Buttons size small *@
+        <section>
+            <h3>Buttons size small</h3>
+            <div class="d-flex gap-2 flex-wrap justify-content-center">
+                <button type="button" class="btn btn-dark btn-sm">Bootstrap Dark</button>
+                <button type="button" class="btn btn-primary btn-sm">Bootstrap Primary</button>
+                <DxButton CssClass="btn btn-primary btn-sm">Blazor Primary</DxButton>
+                <button type="button" disabled class="btn btn-primary btn-sm">Bootstrap
+                    Disabled</button>
+                <button type="button" class="btn btn-light btn-sm">Bootstrap Light</button>
+                <button type="button" class="btn btn-warning btn-sm">Bootstrap Warning</button>
+                <button type="button" class="btn btn-danger btn-sm">Bootstrap Danger</button>
+                <button type="button" class="btn btn-link btn-sm">Bootstrap Link</button>
+                <button type="button" class="btn btn-light btn-sm btn-icon">
+                    <img src="/images/icons/Plus.svg" alt="">
+                </button>
+                <button type="button" class="btn btn-dark btn-sm">
+                    <img src="/images/icons/Plus-white.svg" alt="">
+                    Icon L
+                </button>
+                <button type="button" class="btn btn-primary btn-sm">
+                    Icon R
+                    <img src="/images/icons/Plus-white.svg" alt="">
+                </button>
+            </div>
+        </section>
+
+        <section>
+            <h3>Blazor DropDown Button</h3>
+            <DxDropDownButton Text="Sort by" CssClass="btn btn-light">
+                <Items>
+                    <DxDropDownButtonItem Text="Name (A-Z)" />
+                    <DxDropDownButtonItem Text="Name (Z-A)" />
+                    <DxDropDownButtonItem Text="Address (A-Z)" />
+                    <DxDropDownButtonItem Text="Address (Z-A)" />
+                </Items>
+            </DxDropDownButton>
+        </section>
+
+        <section>
+            <h3>Text Inputs</h3>
+            <div class="d-flex flex-column text-start gap-2 w-50 mx-auto">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Boostrap Text
+                        Component</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                        placeholder="name@example.com">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Boostrap Text Component
+                        Error</label>
+                    <input type="email" class="form-control is-invalid" id="exampleFormControlInput1"
+                        placeholder="name@example.com">
+                    <div class="invalid-feedback">
+                        Please enter a correct e-mail.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Boostrap Textarea
+                        Component</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleDxTextBox" class="form-label">Blazor Text Component</label>
+                    <DxTextBox NullText="Enter username" id="exampleDxTextBox" CssClass="form-control" />
+                </div>
+            </div>
+        </section>
+        <section class="w-50 mx-auto">
+            <h3>Blazor Search Box</h3>
+            <DxSearchBox ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto"
+                NullText="Search by name or address" CssClass="search-control" aria-label="Search" />
+        </section>
+        <section class="w-50 mx-auto">
+            <h3>Blazor Combo Box</h3>
+            <DxComboBox Data="@items" @bind-Value="@selectedValue" NullText="Choose a fruit" />
+        </section>
+    </div>
 </div>
+
+
+@code {
+    private List<string> items = new() { "Apple", "Banana", "Cherry" };
+    private string selectedValue;
+}
