@@ -300,3 +300,62 @@
   background-color: transparent;
   opacity: 1;
 }
+
+.dxbl-tabs
+  > .dxbl-tabs-tablist
+  > .dxbl-scroll-viewer
+  > .dxbl-scroll-viewer-content
+  > ul,
+.dxbl-tabs > .dxbl-tabs-tablist > ul {
+  gap: getRem(24px);
+}
+
+.dxbl-tabs > .dxbl-tabs-tablist {
+  --dxbl-tabs-bg: transparent;
+  --dxbl-tabs-separator-border-color: #e7e8e9;
+  --dxbl-tabs-tab-padding-x: 0.5rem;
+  --dxbl-tabs-tab-selected-color: var(--bs-primary);
+  font-weight: 500;
+}
+
+.dxbl-tabs.dxbl-tabs-top
+  > .dxbl-tabs-tablist
+  > .dxbl-scroll-viewer
+  > .dxbl-scroll-viewer-content
+  > ul
+  > li
+  > .dxbl-tabs-item:not(.dxbl-tabs-tmpl):not(.dxbl-disabled):not(
+    :disabled
+  ).dxbl-active::after,
+.dxbl-tabs.dxbl-tabs-top
+  > .dxbl-tabs-tablist
+  > ul
+  > li
+  > .dxbl-tabs-item:not(.dxbl-tabs-tmpl):not(.dxbl-disabled):not(
+    :disabled
+  ).dxbl-active::after {
+  height: 3px;
+  background-color: $primary;
+}
+
+:not(.dxbl-tabs-state-dragging).dxbl-tabs
+  > .dxbl-tabs-tablist
+  > .dxbl-scroll-viewer
+  > .dxbl-scroll-viewer-content
+  > ul
+  > li
+  > .dxbl-tabs-item:not(.dxbl-tabs-tmpl):not(.dxbl-active):not(
+    .dxbl-disabled
+  ):not(:disabled):not(.dxbl-disabled):not(:disabled):hover::before,
+:not(.dxbl-tabs-state-dragging).dxbl-tabs
+  > .dxbl-tabs-tablist
+  > ul
+  > li
+  > .dxbl-tabs-item:not(.dxbl-tabs-tmpl):not(.dxbl-active):not(
+    .dxbl-disabled
+  ):not(:disabled):not(.dxbl-disabled):not(:disabled):hover::before {
+  top: auto;
+  height: 3px;
+  background-color: $primary;
+  opacity: 1;
+}
