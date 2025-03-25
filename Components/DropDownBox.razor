@@ -1,0 +1,37 @@
+<section class="w-50 mx-auto">
+    <h3>Multiple Selection ListBox</h3>
+    <DxDropDownBox NullText="Choose fruits">
+        <DropDownBodyTemplate>
+            <DxListBox Data="@items" TData="string" TValue="string" Values="@(GetListBoxValues())"
+                SelectionMode="ListBoxSelectionMode.Multiple" ShowCheckBoxes="true" ShowSearchBox="true"
+                CssClass="templateListbox">
+            </DxListBox>
+        </DropDownBodyTemplate>
+    </DxDropDownBox>
+</section>
+
+
+
+@code {
+    private List<string> items = new()
+{
+"Apple", "Banana", "Cherry", "Orange", "Strawberry",
+"Blueberry", "Pineapple", "Mango", "Grapes", "Watermelon",
+"Peach", "Pear", "Kiwi", "Plum", "Raspberry"
+};
+    private string selectedValue = ""; // Default value
+
+    private IEnumerable<string> GetListBoxValues()
+    {
+        if (string.IsNullOrEmpty(selectedValue))
+        {
+            return new List<string>(); // Return empty list if selectedValue is null or empty
+        }
+        return selectedValue.Split(',', StringSplitOptions.RemoveEmptyEntries);
+    }
+
+    private void ListBoxValuesChanged(IEnumerable<string> values)
+    {
+        selectedValue = string.Join(",", values);
+    }
+}
