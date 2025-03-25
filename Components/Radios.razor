@@ -1,0 +1,25 @@
+<section class="w-50 mx-auto">
+    <h3>Radios</h3>
+    <div class="pt-5 ps-4">
+        @foreach (var option in GeneralAnswerOptions)
+        {
+            <DxRadio GroupName="general-radio-group" @bind-GroupValue="@GeneralAnswer" Value="@option.Value"
+                SizeMode="@option.Size">
+                @option.Value
+            </DxRadio>
+        }
+    </div>
+</section>
+
+@code {
+    string GeneralAnswer { get; set; }
+
+    record AnswerOption(string Value, SizeMode Size);
+
+    IEnumerable<AnswerOption> GeneralAnswerOptions = new[]
+    {
+new AnswerOption("Small.", SizeMode.Small),
+new AnswerOption("Medium.", SizeMode.Medium),
+new AnswerOption("Large.", SizeMode.Large)
+};
+}

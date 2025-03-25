@@ -12019,6 +12019,31 @@ textarea.form-control-lg {
   opacity: 1 !important;
 }
 
+.dxbl-checkbox {
+  --dxbl-checkbox-check-element-size: 1rem;
+  --dxbl-checkbox-radio-size: 1rem;
+  --dxbl-checkbox-radio-check-size: 0.5rem;
+  --dxbl-checkbox-indeterminate-element-width: 0.5rem;
+  --dxbl-checkbox-font-size: 0.875rem;
+  font-weight: 500;
+}
+.dxbl-checkbox.dxbl-sm {
+  --dxbl-checkbox-font-size: 0.75rem;
+  --dxbl-checkbox-line-height: 1.5;
+  --dxbl-checkbox-spacing: 0.375rem;
+}
+.dxbl-checkbox:not(.dxbl-checkbox-switch):not(.dxbl-checkbox-radio).dxbl-lg {
+  --dxbl-checkbox-check-element-size: 1.25rem;
+  --dxbl-checkbox-radio-size: 1.25rem;
+  --dxbl-checkbox-font-size: 1rem;
+  --dxbl-checkbox-spacing: 0.375rem;
+}
+
+.dxbl-checkbox.dxbl-checkbox-radio.dxbl-lg {
+  --dxbl-checkbox-radio-check-size: 0.75rem;
+  --dxbl-checkbox-radio-size: 1.25rem;
+}
+
 html,
 body {
   height: 100%;
