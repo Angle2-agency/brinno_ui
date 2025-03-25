@@ -65,17 +65,17 @@
     background-color: var(--dxbl-btn-hover-color);
 }
 
-.nav-buttons-container {
+.nav-buttons-w-75 {
     display: flex;
     gap: 10px;
     padding: 2rem 0rem;
 }
 
-    .nav-buttons-container ::deep .menubutton-float-end {
+    .nav-buttons-w-75 ::deep .menubutton-float-end {
         margin-left: auto;
     }
 
-    .nav-buttons-container ::deep .dxbl-btn-icon-only {
+    .nav-buttons-w-75 ::deep .dxbl-btn-icon-only {
         --dxbl-btn-padding-x: 0.75rem;
         --dxbl-btn-padding-y: 0.25rem;
     }

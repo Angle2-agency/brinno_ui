@@ -11996,7 +11996,7 @@ textarea.form-control-lg {
 }
 
 .dxbl-list-box,
-.dxbl-list-box-render-container {
+.dxbl-list-box-render-w-75 {
   --dxbl-list-box-border-radius: 0.5rem;
   --dxbl-list-box-border-width: 0;
 }
@@ -12008,8 +12008,8 @@ textarea.form-control-lg {
   --dxbl-dropdown-box-shadow: 0px 1px 3px 0px rgba(54, 45, 36, 0.06);
 }
 
-.dxbl-list-box-render-container:not(.dxbl-disabled):not(:disabled):not(.dxbl-readonly) > .dxbl-scroll-viewer > .dxbl-scroll-viewer-content > :not(.dxbl-list-box-empty-data-container) > li:not(.dxbl-list-box-item-disabled):not(.dxbl-list-box-group-item):not([dxbl-top-virtual-spacer-element]):not([dxbl-bottom-virtual-spacer-element]):hover:not(.dxbl-list-box-item-focused):not(:focus)::before,
-.dxbl-list-box:not(.dxbl-disabled):not(:disabled):not(.dxbl-readonly) > .dxbl-scroll-viewer > .dxbl-scroll-viewer-content > :not(.dxbl-list-box-empty-data-container) > li:not(.dxbl-list-box-item-disabled):not(.dxbl-list-box-group-item):not([dxbl-top-virtual-spacer-element]):not([dxbl-bottom-virtual-spacer-element]):hover:not(.dxbl-list-box-item-focused):not(:focus)::before {
+.dxbl-list-box-render-w-75:not(.dxbl-disabled):not(:disabled):not(.dxbl-readonly) > .dxbl-scroll-viewer > .dxbl-scroll-viewer-content > :not(.dxbl-list-box-empty-data-w-75) > li:not(.dxbl-list-box-item-disabled):not(.dxbl-list-box-group-item):not([dxbl-top-virtual-spacer-element]):not([dxbl-bottom-virtual-spacer-element]):hover:not(.dxbl-list-box-item-focused):not(:focus)::before,
+.dxbl-list-box:not(.dxbl-disabled):not(:disabled):not(.dxbl-readonly) > .dxbl-scroll-viewer > .dxbl-scroll-viewer-content > :not(.dxbl-list-box-empty-data-w-75) > li:not(.dxbl-list-box-item-disabled):not(.dxbl-list-box-group-item):not([dxbl-top-virtual-spacer-element]):not([dxbl-bottom-virtual-spacer-element]):hover:not(.dxbl-list-box-item-focused):not(:focus)::before {
   background-color: #ffd6ac !important;
   opacity: 1 !important;
 }

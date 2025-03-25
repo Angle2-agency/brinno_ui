@@ -47,7 +47,7 @@
     font-weight: 500;
     line-height: 160%; 
 }
-::deep .menu-item .dxbl-btn .dxbl-menu-item-text-container {
+::deep .menu-item .dxbl-btn .dxbl-menu-item-text-w-75 {
     margin-left: 12px;
 }
 
@@ -120,7 +120,7 @@
 
 
 
-::deep .about-brinno .dxbl-menu-item-text-container {
+::deep .about-brinno .dxbl-menu-item-text-w-75 {
     background: url("images/icons/external-link.svg") no-repeat right center / 18px 18px;
     width: 100%;
     padding-right: 24px;
@@ -145,7 +145,7 @@
     background-color: #FFF9EE;
 }
 
-::deep .profile .accordion-item .dxbl-menu-item-text-container {
+::deep .profile .accordion-item .dxbl-menu-item-text-w-75 {
     margin-left: 24px;
 }
 
