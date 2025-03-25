@@ -70,19 +70,25 @@ npm install
 
 ### Running the Application
 
-1.  **Build the project:**
+1.  **Build the SCSS files:**
+
+    ```bash
+    npm run sass
+    ```
+
+2.  **Build the project:**
 
     ```bash
     dotnet build
     ```
 
-2.  **Run the project:**
+3.  **Run the project:**
 
     ```bash
     dotnet run
     ```
 
-3.  **Open your browser and navigate to** `https://localhost:<port>` (the port will be displayed in the console output).
+4.  **Open your browser and navigate to** `https://localhost:<port>` (the port will be displayed in the console output).
 
 ## Project Structure
 
