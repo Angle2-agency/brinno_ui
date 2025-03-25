@@ -1,0 +1,15 @@
+﻿@rendermode InteractiveServer
+
+<section class="w-50 mx-auto">
+    <h3>Blazor Combo Box</h3>
+    <DxComboBox Data="@items" @bind-Value="@selectedValue" NullText="Choose a fruit" />
+</section>
+
+
+
+
+
+@code {
+    private List<string> items = new() { "Apple", "Banana", "Cherry" };
+    private string selectedValue;
+}
