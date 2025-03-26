@@ -80,13 +80,25 @@
         <DxButton RenderStyle="ButtonRenderStyle.Link" SizeMode="SizeMode.Small" Text="Link" />
         <DxButton RenderStyle="ButtonRenderStyle.None" SizeMode="SizeMode.Small" Text="None" />
     </div>
+</section>
 
+<section>
+    <h3>Toggle Buttons</h3>
+    <DxButtonGroup SelectionMode="ButtonGroupSelectionMode.Single" RenderStyleMode="ButtonRenderStyleMode.Outline"
+        RenderStyle="ButtonRenderStyle.Light">
+        <Items>
+            <DxButtonGroupItem Text="Hour" Selected />
+            <DxButtonGroupItem Text="Day" />
+            <DxButtonGroupItem Text="Week" />
+            <DxButtonGroupItem Text="Month" />
+        </Items>
+    </DxButtonGroup>
 </section>
 
 @* DropDown Button *@
 <section>
     <h3>Blazor DropDown Button</h3>
-    <DxDropDownButton Text="Sort by" CssClass="btn btn-light">
+    <DxDropDownButton Text="Sort by" RenderStyle="ButtonRenderStyle.Light">
         <Items>
             <DxDropDownButtonItem Text="Name (A-Z)" />
             <DxDropDownButtonItem Text="Name (Z-A)" />

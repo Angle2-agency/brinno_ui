@@ -192,6 +192,40 @@
       background: $white !important;
     }
   }
+  &.dxbl-btn-outline-light {
+    --dxbl-btn-bg: var(--bs-white);
+    --dxbl-btn-color: var(--bs-gray-800);
+    --dxbl-btn-hover-color: inherit;
+    --dxbl-btn-border-color: var(--bs-gray-100);
+    &:hover {
+      background: #fff8f2;
+    }
+    &.dxbl-active {
+      background: #fff8f2;
+      color: $primary;
+      &::before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        background-color: $primary;
+        mask-image: url('/images/icons/check.svg');
+        mask-size: 20px 20px;
+        mask-position: center;
+        mask-repeat: no-repeat;
+        margin-right: 0.25rem;
+      }
+    }
+  }
+  &:not(.dxbl-disabled):not(:disabled).dxbl-active {
+    background: #fff8f2;
+  }
+}
+
+.dxbl-btn-group {
+  .dxbl-btn {
+    font-size: 0.875rem;
+    --dxbl-btn-padding-y: 0.535rem;
+  }
 }
 
 .dxbl-btn-standalone.dxbl-disabled .dxbl-btn-caption,
