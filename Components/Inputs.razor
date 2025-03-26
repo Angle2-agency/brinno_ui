@@ -1,7 +1,7 @@
 <section>
     <h3>Text Inputs</h3>
     <div class="d-flex flex-column text-start gap-2 w-75 mx-auto">
-        <div class="mb-3">
+        @* <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Boostrap Text
                 Component</label>
             <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
@@ -19,10 +19,16 @@
             <label for="exampleFormControlTextarea1" class="form-label">Boostrap Textarea
                 Component</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-        <div class="mb-3">
+        </div> *@
+        <div class="mb-lg-3 d-flex flex-column gap-2">
             <label for="exampleDxTextBox" class="form-label">Blazor Text Component</label>
             <DxTextBox NullText="Enter username" id="exampleDxTextBox" />
+            <DxTextBox Password="true" CssClass="cw-320" NullText="Enter password" InputId="tbPassword" />
+            <DxMemo NullText="Notes" Rows="4" ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto" />
+            <DxMaskedInput T="string" NullText="Phone Number" Mask="@PhoneMask"
+                ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto" InputId="miPhone" />
+            <DxDateEdit T="DateTime" InputId="deOverview" />
+
         </div>
     </div>
 </section>
@@ -32,3 +38,7 @@
     <DxSearchBox ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto" NullText="Search by name or address"
         CssClass="search-control" aria-label="Search" />
 </section>
+
+@code {
+    string PhoneMask { get; set; } = "(999)000-0000";
+}
