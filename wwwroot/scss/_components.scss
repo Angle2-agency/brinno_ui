@@ -1,3 +1,4 @@
+// Bootstrap Buttons
 .btn {
   &:not(.btn-link),
   &:not(.btn-link) {
@@ -105,6 +106,7 @@
   }
 }
 
+// Dx Buttons
 .dxbl-btn.dxbl-btn-standalone {
   --dxbl-btn-padding-x: 0.75rem;
   --dxbl-btn-padding-y: 0.4375rem;
@@ -253,6 +255,7 @@
   }
 }
 
+// Dx Form Control
 .dxbl-text-edit {
   box-shadow: 0px 1px 3px 0px rgba(54, 45, 36, 0.06);
   --dxbl-text-edit-border-color: #e7e8e9;
@@ -293,6 +296,7 @@
   }
 }
 
+// Dx Dropdown
 .dxbl-edit-dropdown {
   --dxbl-edit-dropdown-border-radius: 0.5rem;
   --dxbl-edit-dropdown-border-color: #e7e8e9;
@@ -424,6 +428,7 @@
   opacity: 1 !important;
 }
 
+// Dx CheckBox
 .dxbl-checkbox {
   --dxbl-checkbox-check-element-size: 1rem;
   --dxbl-checkbox-radio-size: 1rem;
@@ -521,6 +526,7 @@
   opacity: 1;
 }
 
+// Dx Tabs
 .dxbl-tabs
   > .dxbl-tabs-tablist
   > .dxbl-scroll-viewer
@@ -651,4 +657,136 @@
   &::before {
     opacity: 1 !important;
   }
+}
+
+.dxbl-calendar {
+  --dxbl-calendar-bg: var(--bs-white);
+  --dxbl-calendar-border-color: #e7e8e9;
+  --dxbl-calendar-border-radius: 0.5rem;
+  --dxbl-calendar-box-shadow: 0px 2px 15px 0px rgba(54, 48, 41, 0.1);
+  --dxbl-calendar-font-size: 0.75rem;
+  .dxbl-calendar-header {
+    &::before {
+      display: none;
+    }
+    .dxbl-btn {
+      svg.dxbl-image {
+        width: getRem(12px);
+        height: getRem(12px);
+      }
+    }
+  }
+  div.dxbl-calendar-footer {
+    &::before {
+      display: none;
+    }
+    .dxbl-btn {
+      --dxbl-btn-line-height: 1.6;
+      --dxbl-btn-bg: unset;
+      --dxbl-btn-hover-bg: unset;
+      --dxbl-btn-box-shadow: none;
+      --dxbl-btn-border-color: unset;
+      --dxbl-btn-hover-border-color: unset;
+      --dxbl-btn-focus-box-shadow: none;
+      --dxbl-btn-border-radius: 0.25rem;
+      &:hover {
+        background: $yellow-hover;
+      }
+    }
+  }
+  .dxbl-calendar-content {
+    .dxbl-calendar-selected-item {
+      color: $white;
+      &::before {
+        background-color: $primary;
+        opacity: 1;
+        border-radius: getRem(4px);
+      }
+      &:hover {
+        color: $white !important;
+        &::before {
+          background-color: $primary-dark !important;
+        }
+      }
+    }
+    .dxbl-calendar-day {
+      &.dxbl-calendar-today {
+        border-color: transparent;
+        position: relative;
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          inset: 0;
+          border: 1px solid $primary;
+          border-radius: getRem(4px);
+        }
+      }
+      &.dxbl-calendar-weekend {
+        color: $primary !important;
+        &.dxbl-calendar-selected-item {
+          color: $white !important;
+        }
+      }
+    }
+  }
+}
+
+.dxbl-calendar .dxbl-calendar-content[view='0'] > table > tbody > tr > td,
+.dxbl-calendar .dxbl-calendar-content[view='0'] > table > tbody > tr > th {
+  height: getRem(28px);
+  min-width: getRem(28px);
+  padding: getRem(2px);
+}
+
+.dxbl-calendar:not(.dxbl-disabled):not(:disabled)
+  .dxbl-calendar-content
+  > table
+  > tbody
+  > tr:not(.dxbl-calendar-days-of-week)
+  td:not(.dxbl-calendar-disabled-item):not(.dxbl-calendar-week-number):not(
+    .dxbl-calendar-selected-range
+  ):not(.dxbl-disabled):not(:disabled):hover::before {
+  background-color: $yellow-hover;
+  opacity: 1;
+  border-radius: getRem(4px);
+}
+
+.dxbl-dropdown > .dxbl-dropdown-dialog.dxbl-edit-dropdown,
+.dxbl-modal
+  > .dxbl-modal-root
+  > .dxbl-popup.dxbl-edit-dropdown
+  > .dxbl-modal-content {
+  box-shadow: 0px 2px 15px 0px rgba(54, 48, 41, 0.1);
+}
+
+.dxbl-calendar-content:has(.dxbl-calendar-selected-range) {
+  .dxbl-calendar-selected-item {
+    background-color: $yellow-hover;
+    color: inherit !important;
+    &::before {
+      background-color: transparent !important;
+    }
+  }
+  .dxbl-calendar-selected-range {
+    color: $white !important;
+    &.dxbl-calendar-weekend {
+      color: $white !important;
+    }
+    &::before {
+      background-color: $primary !important;
+      border-radius: getRem(4px) !important;
+    }
+  }
+}
+
+.dxbl-dropdown
+  > .dxbl-dropdown-dialog.dxbl-edit-dropdown
+  .dxbl-edit-dropdown-header::before,
+.dxbl-modal
+  > .dxbl-modal-root
+  > .dxbl-popup.dxbl-edit-dropdown
+  > .dxbl-modal-content
+  .dxbl-edit-dropdown-header::before {
+  display: none;
 }

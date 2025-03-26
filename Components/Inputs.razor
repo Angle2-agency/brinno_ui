@@ -25,10 +25,17 @@
             <div class="text-error small">The Username value should be specified.</div>
 
             <DxTextBox Password="true" NullText="Enter password" />
+
             <DxMemo NullText="Notes" Rows="4" ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto" />
+
             <DxMaskedInput T="string" NullText="Phone Number" Mask="@PhoneMask"
                 ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto" />
+
             <DxDateEdit T="DateTime" />
+
+            <DxDateRangePicker T="DateTime" />
+
+            <DxTimeEdit T="DateTime" />
 
         </div>
     </div>
