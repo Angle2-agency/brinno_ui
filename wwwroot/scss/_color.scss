@@ -21,19 +21,8 @@ $primary: $yellow;
 $primary-dark: #db6e14;
 
 $success: $green;
-$info: $cyan;
+
 $warning: $yellow;
 $danger: $red;
 $light: $gray-100;
 $dark: $gray-900;
-
-$theme-colors: (
-  'primary': $primary,
-  'secondary': $secondary,
-  'success': $success,
-  'info': $info,
-  'warning': $warning,
-  'danger': $danger,
-  'light': $light,
-  'dark': $dark,
-);
