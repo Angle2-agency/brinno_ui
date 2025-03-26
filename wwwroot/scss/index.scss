@@ -1,8 +1,16 @@
 // @import url("open-iconic/font/css/open-iconic-bootstrap.min.css");
 
-@import '../../node_modules/bootstrap/scss/functions';
 @import './color';
+@import '../../node_modules/bootstrap/scss/functions';
 @import '../../node_modules/bootstrap/scss/variables';
+
+// Create your own map
+$custom-colors: (
+  'error': $error,
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
 
 @import './variables';
 @import './functions';

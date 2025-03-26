@@ -286,6 +286,11 @@
       margin-right: getRem(12px);
     }
   }
+  &.invalid {
+    --dxbl-text-edit-border-color: var(--bs-error);
+    --dxbl-text-edit-focus-border-color: var(--bs-error);
+    color: var(--bs-error);
+  }
 }
 
 .dxbl-edit-dropdown {

@@ -21,13 +21,14 @@
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div> *@
         <div class="mb-lg-3 d-flex flex-column gap-2">
-            <label for="exampleDxTextBox" class="form-label">Blazor Text Component</label>
-            <DxTextBox NullText="Enter username" id="exampleDxTextBox" />
-            <DxTextBox Password="true" CssClass="cw-320" NullText="Enter password" InputId="tbPassword" />
+            <DxTextBox NullText="Enter username" Text="Bob" CssClass="invalid" />
+            <div class="text-error small">The Username value should be specified.</div>
+
+            <DxTextBox Password="true" NullText="Enter password" />
             <DxMemo NullText="Notes" Rows="4" ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto" />
             <DxMaskedInput T="string" NullText="Phone Number" Mask="@PhoneMask"
-                ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto" InputId="miPhone" />
-            <DxDateEdit T="DateTime" InputId="deOverview" />
+                ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto" />
+            <DxDateEdit T="DateTime" />
 
         </div>
     </div>
