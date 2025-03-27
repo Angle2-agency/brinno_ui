@@ -276,8 +276,12 @@
   .dxbl-edit-btn-dropdown {
     width: 40px;
     aspect-ratio: 1;
-    &::before {
+    &:not(.dxbl-disabled)::before {
       background-color: #ffd6ac !important;
+      opacity: 1 !important;
+    }
+    &.dxbl-disabled::before {
+      background-color: $gray-100 !important;
       opacity: 1 !important;
     }
   }
