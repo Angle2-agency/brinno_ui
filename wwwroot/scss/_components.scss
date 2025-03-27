@@ -1133,3 +1133,47 @@
     }
   }
 }
+
+.dxbl-modal {
+  --dxbl-popup-border-width: 0;
+  --dxbl-popup-border-radius: 0.5rem;
+  --dxbl-popup-bg: var(--bs-white);
+  --dxbl-popup-shadow: 0px 2px 15px 0px rgba(54, 48, 41, 0.1);
+  --dxbl-popup-back-bg: rgba(207, 203, 200, 0.65);
+  --dxbl-popup-back-opacity: 1;
+
+  --dxbl-popup-header-bg: unset;
+  --dxbl-popup-header-color: inherit;
+  // --dxbl-popup-header-padding-y: 0.3125rem;
+  // --dxbl-popup-header-padding-x: 0.75rem;
+  --dxbl-popup-header-font-weight: 600;
+  --dxbl-popup-header-btn-bg: transparent;
+  --dxbl-popup-header-btn-color: unset;
+  --dxbl-popup-header-btn-hover-bg: unset;
+  --dxbl-popup-header-btn-hover-color: unset;
+  --dxbl-popup-body-padding-x: 0.75rem;
+  --dxbl-popup-body-padding-y: 0.75rem;
+  --dxbl-popup-footer-bg: unset;
+  --dxbl-popup-footer-color: inherit;
+  --dxbl-popup-footer-padding-y: 0.3125rem;
+
+  & > .dxbl-modal-back {
+    background-color: rgba(207, 203, 200, 0.65);
+    backdrop-filter: blur(0.5px);
+    opacity: 1;
+  }
+  .dxbl-modal-content {
+    overflow: hidden;
+    .dxbl-modal-header.dxbl-popup-header {
+      &::before {
+        display: none;
+      }
+    }
+    .dxbl-modal-footer {
+      padding-bottom: 24px;
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
