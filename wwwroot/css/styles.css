@@ -4816,10 +4816,10 @@ textarea.form-control-lg {
 }
 
 .badge {
-  --bs-badge-padding-x: 0.65em;
-  --bs-badge-padding-y: 0.35em;
-  --bs-badge-font-size: 0.75em;
-  --bs-badge-font-weight: 700;
+  --bs-badge-padding-x: 0.5rem;
+  --bs-badge-padding-y: 0.125rem;
+  --bs-badge-font-size: 0.75rem;
+  --bs-badge-font-weight: 500;
   --bs-badge-color: #fff;
   --bs-badge-border-radius: var(--bs-border-radius);
   display: inline-block;
@@ -12278,8 +12278,12 @@ textarea.form-control-lg {
   width: 40px;
   aspect-ratio: 1;
 }
-.dxbl-text-edit .dxbl-edit-btn-dropdown::before {
+.dxbl-text-edit .dxbl-edit-btn-dropdown:not(.dxbl-disabled)::before {
   background-color: #ffd6ac !important;
+  opacity: 1 !important;
+}
+.dxbl-text-edit .dxbl-edit-btn-dropdown.dxbl-disabled::before {
+  background-color: #e7e8e9 !important;
   opacity: 1 !important;
 }
 .dxbl-text-edit.search-control .dxbl-btn-icon {
@@ -12589,6 +12593,67 @@ textarea.form-control-lg {
 .dxbl-dropdown > .dxbl-dropdown-dialog.dxbl-edit-dropdown .dxbl-edit-dropdown-header::before,
 .dxbl-modal > .dxbl-modal-root > .dxbl-popup.dxbl-edit-dropdown > .dxbl-modal-content .dxbl-edit-dropdown-header::before {
   display: none;
+}
+
+.dxbl-grid {
+  --dxbl-grid-bg: var(--bs-white);
+  --dxbl-grid-line-height: 1.6;
+  --dxbl-grid-border-color: var(--bs-gray-100);
+  --dxbl-grid-fixed-column-border-color: var(--bs-gray-100);
+  --dxbl-grid-border-radius: 0.5rem;
+  --dxbl-grid-text-cell-padding-x: 0.75rem;
+  --dxbl-grid-text-cell-padding-y: 0.75rem;
+  box-shadow: 0px 1px 3px 0px rgba(54, 45, 36, 0.06);
+  overflow: hidden;
+}
+.dxbl-grid > .dxbl-scroll-viewer {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+.dxbl-grid .dxbl-grid-header-row {
+  overflow: hidden;
+}
+.dxbl-grid .dxbl-grid-header-row .dxbl-grid-sort-asc {
+  width: 18px;
+  height: 18px;
+  background: url("/images/icons/sort-asc.svg") no-repeat center/cover;
+}
+.dxbl-grid .dxbl-grid-header-row .dxbl-grid-sort-asc .dxbl-image {
+  display: none;
+}
+.dxbl-grid .dxbl-grid-header-row .dxbl-grid-sort-desc {
+  width: 18px;
+  height: 18px;
+  background: url("/images/icons/sort-desc.svg") no-repeat center/cover;
+}
+.dxbl-grid .dxbl-grid-header-row .dxbl-grid-sort-desc .dxbl-image {
+  display: none;
+}
+
+.dxbl-grid .dxbl-grid-table > thead .dxbl-grid-header-row > th:not(.dxbl-grid-empty-cell)::before {
+  background-color: #fff;
+  opacity: 1;
+  border-radius: 8px 8px 0 0;
+}
+
+.dxbl-grid .dxbl-grid-table > thead > tr > td,
+.dxbl-grid .dxbl-grid-table > thead > tr > th {
+  font-size: 0.6875rem;
+}
+
+.dxbl-grid .dxbl-grid-table .dxbl-grid-selected-row:not(.dxbl-grid-focused-row):not(.dxbl-grid-touch-selection):not(.dxbl-grid-touch-selection-edge) > td:not(.dxbl-grid-empty-cell):not(.dxbl-grid-indent-cell)::before {
+  background-color: #fff9ee !important;
+  opacity: 1 !important;
+  border-radius: 0;
+}
+
+.dxbl-grid .dxbl-grid-table > tbody > tr > td > .dxbl-checkbox,
+.dxbl-grid .dxbl-grid-table > tfoot > tr > td > .dxbl-checkbox,
+.dxbl-grid .dxbl-grid-table > thead > tr > td > .dxbl-checkbox {
+  vertical-align: middle;
+}
+
+.badge {
+  line-height: 1.6;
 }
 
 html,

@@ -1,0 +1,80 @@
+@using MyBlazorServerApp.Services
+@attribute [StreamRendering(true)]
+@rendermode InteractiveServer
+@inject WeatherForecastService ForecastService
+
+
+<section class="container">
+    <h3>Table</h3>
+
+    @if (forecasts == null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else
+    {
+        <DxGrid Data="@forecasts">
+            <Columns>
+                <DxGridSelectionColumn Width="60px" />
+                <DxGridDataColumn Caption="Preview" Width="86px">
+                    <CellDisplayTemplate>
+                        <img src="images/camera-preview.png" height="40" />
+                    </CellDisplayTemplate>
+                </DxGridDataColumn>
+                <DxGridDataColumn Caption="File name" Width="150px">
+                    <CellDisplayTemplate>
+                        video0000543729.mp4
+                    </CellDisplayTemplate>
+                </DxGridDataColumn>
+                <DxGridDataColumn Caption="Start date" Width="150px">
+                    <CellDisplayTemplate>
+                        2025/02/25 11:30:19
+                    </CellDisplayTemplate>
+                </DxGridDataColumn>
+                <DxGridDataColumn Caption="End date" Width="150px">
+                    <CellDisplayTemplate>
+                        2025/02/26 11:30:19
+                    </CellDisplayTemplate>
+                </DxGridDataColumn>
+                <DxGridDataColumn Caption="Tags">
+                    <CellDisplayTemplate>
+                        <div class="d-flex flex-wrap gap-1">
+                            <span class="badge text-black border border-light">Tag light</span>
+                            <span
+                                class="badge  text-primary border border-primary bg-primary bg-opacity-10 border-opacity-25">Tag
+                                Primary</span>
+                            <span class="badge  text-error border border-error bg-error bg-opacity-10 border-opacity-25">Tag
+                                Primary</span>
+                            <span
+                                class="badge  text-success border border-success bg-success bg-opacity-10 border-opacity-25">Tag
+                                Success</span>
+                        </div>
+
+                    </CellDisplayTemplate>
+                </DxGridDataColumn>
+
+                @* <DxGridDataColumn Caption="Date" FieldName="Date" SortIndex="1" AllowSort="false">
+                    <CellDisplayTemplate>
+                        @context.Value?.ToString()
+                    </CellDisplayTemplate>
+                </DxGridDataColumn> *@
+
+                <DxGridDataColumn Caption="Areas" TextAlignment="GridTextAlignment.Center" FieldName="TemperatureC"
+                    Width="120px" SortIndex="0" />
+                @* <DxGridDataColumn Caption="Temperature (F)" FieldName="TemperatureF" /> *@
+                @* <DxGridDataColumn Caption="Status" FieldName="Status" /> *@
+            </Columns>
+        </DxGrid>
+    }
+</section>
+
+
+
+@code {
+    private WeatherForecast[]? forecasts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        forecasts = await ForecastService.GetForecastAsync(DateOnly.FromDateTime(DateTime.Now));
+    }
+}
