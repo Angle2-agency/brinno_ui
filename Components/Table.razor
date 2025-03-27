@@ -53,16 +53,9 @@
                     </CellDisplayTemplate>
                 </DxGridDataColumn>
 
-                @* <DxGridDataColumn Caption="Date" FieldName="Date" SortIndex="1" AllowSort="false">
-                    <CellDisplayTemplate>
-                        @context.Value?.ToString()
-                    </CellDisplayTemplate>
-                </DxGridDataColumn> *@
 
-                <DxGridDataColumn Caption="Areas" TextAlignment="GridTextAlignment.Center" FieldName="TemperatureC"
-                    Width="120px" SortIndex="0" />
-                @* <DxGridDataColumn Caption="Temperature (F)" FieldName="TemperatureF" /> *@
-                @* <DxGridDataColumn Caption="Status" FieldName="Status" /> *@
+                <DxGridDataColumn Caption="Areas" TextAlignment="GridTextAlignment.Center" FieldName="Area" Width="120px"
+                    SortIndex="0" />
             </Columns>
         </DxGrid>
     }
@@ -75,6 +68,6 @@
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await ForecastService.GetForecastAsync(DateOnly.FromDateTime(DateTime.Now));
+        forecasts = await ForecastService.GetDataAsync();
     }
 }

@@ -2,19 +2,12 @@ namespace MyBlazorServerApp.Services
 {
     public class WeatherForecastService
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
-        public Task<WeatherForecast[]> GetForecastAsync(DateOnly startDate)
+        public Task<WeatherForecast[]> GetDataAsync()
         {
             var rng = new Random();
             return Task.FromResult(Enumerable.Range(1, 6).Select(index => new WeatherForecast
             {
-                Date = startDate.AddDays(index),
-                TemperatureC = rng.Next(0, 100),
-                Status = Summaries[rng.Next(Summaries.Length)]
+                Area = rng.Next(0, 100),
             }).ToArray());
         }
     }
