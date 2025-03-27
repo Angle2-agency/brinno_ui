@@ -1,0 +1,31 @@
+<section class="container mx-auto">
+    <h3>Modal</h3>
+    <DxButton RenderStyle="ButtonRenderStyle.Dark" CssClass="w-50" Text="Open Modal"
+        Click="@(() => PopupVisible = true)" />
+
+    <DxPopup @bind-Visible="@PopupVisible" ShowFooter="true" ShowHeader="true" ShowCloseButton="false">
+        <HeaderContentTemplate>
+            <div class="m-auto my-2">
+                <img src="/images/icons/Attention.svg" />
+            </div>
+        </HeaderContentTemplate>
+        <BodyContentTemplate>
+            <h3 class="text-center">Are you sure you want to delete video0000543729.mp4 file?</h3>
+        </BodyContentTemplate>
+        <FooterContentTemplate>
+            <div class="d-flex justify-content-center gap-2 w-100 pb-3">
+                <DxButton RenderStyle="ButtonRenderStyle.Light" CssClass="w-50" Text="Cancel"
+                    Click="@(() => PopupVisible = false)" />
+                <DxButton RenderStyle="ButtonRenderStyle.Warning" CssClass="w-50" Click="@(() => PopupVisible = false)">
+                    <img src="/images/icons/trash.svg" alt="Delete">
+                    Delete file
+                </DxButton>
+            </div>
+
+        </FooterContentTemplate>
+    </DxPopup>
+</section>
+
+@code {
+    bool PopupVisible { get; set; } = false;
+}
