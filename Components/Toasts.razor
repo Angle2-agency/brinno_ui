@@ -1,0 +1,66 @@
+<section class="container mx-auto">
+    <h3>The DevExpress Blazor Toast</h3>
+    <div class="">
+        <DxToastProvider Name="Overview" MaxToastCount="6" AnimationType="ToastAnimationType.Slide"
+            VerticalAlignment="VerticalEdge.Top" HorizontalAlignment="HorizontalAlignment.Right"
+            DisplayTime="TimeSpan.FromSeconds(10)" Width="300px" />
+    </div>
+
+</section>
+
+
+@code {
+    [Inject] IToastNotificationService ToastService { get; set; }
+    protected override void OnAfterRender(bool firstRender)
+    {
+        ToastService.ShowToast(new ToastOptions()
+        {
+            ProviderName = "Overview",
+            ThemeMode = ToastThemeMode.Light,
+            Title = "Text",
+            Text = "Placeholder text"
+        });
+        @* RenderButtons() *@
+
+        ToastService.ShowToast(new ToastOptions()
+        {
+            ProviderName = "Overview",
+            ThemeMode = ToastThemeMode.Light,
+            RenderStyle = ToastRenderStyle.Success,
+            Title = "Text",
+            Text = "Placeholder text"
+        });
+        ToastService.ShowToast(new ToastOptions()
+        {
+            ProviderName = "Overview",
+            ThemeMode = ToastThemeMode.Light,
+            RenderStyle = ToastRenderStyle.Info,
+            Title = "Text",
+            Text = "Placeholder text"
+        });
+        ToastService.ShowToast(new ToastOptions()
+        {
+            ProviderName = "Overview",
+            ThemeMode = ToastThemeMode.Light,
+            RenderStyle = ToastRenderStyle.Danger,
+            Title = "Text",
+            Text = "Placeholder text"
+        });
+        ToastService.ShowToast(new ToastOptions()
+        {
+            ProviderName = "Overview",
+            ThemeMode = ToastThemeMode.Light,
+            RenderStyle = ToastRenderStyle.Warning,
+            Title = "Text",
+            Text = "Placeholder text"
+        });
+
+    }
+    private RenderFragment RenderButtons()
+    {
+        return @<div style="display: flex; gap: 0.5rem;">
+            <DxButton RenderStyle="ButtonRenderStyle.Warning">Show details...</DxButton>
+            <DxButton RenderStyle="ButtonRenderStyle.Secondary">OK</DxButton>
+        </div>;
+    }
+}

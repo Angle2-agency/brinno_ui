@@ -980,3 +980,156 @@
     }
   }
 }
+
+// Toast
+.dxbl-toast {
+  &.dxbl-toast-theme-light {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0.5rem;
+    --dxbl-toast-body-padding: 0.75rem;
+    --dxbl-toast-header-font-size: 0.875rem;
+    --dxbl-toast-header-font-weight: 600;
+    --dxbl-toast-header-gap: 0.5rem;
+    --dxbl-toast-text-font-size: 0.875rem;
+    --dxbl-toast-text-font-weight: 500;
+    --dxbl-toast-content-gap: 0.5rem;
+    .dxbl-toast-body {
+      .dxbl-toast-icon-column {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        mask-position: center;
+        mask-repeat: no-repeat;
+        mask-size: contain;
+        padding: 0;
+        margin-top: getRem(2px);
+        .dxbl-toast-icon {
+          display: none;
+        }
+      }
+      .dxbl-toast-content {
+        text-align: left;
+        .dxbl-toast-text-content {
+          flex-direction: row;
+        }
+      }
+      .dxbl-toast-close {
+        .dxbl-toast-close-btn {
+          width: 24px;
+          height: 24px;
+          &:hover {
+            background: transparent;
+          }
+          .dxbl-image {
+            width: getRem(12px);
+            height: getRem(12px);
+          }
+        }
+      }
+    }
+
+    .dxbl-toast-accent-line {
+      display: none;
+    }
+  }
+  &.dxbl-toast-render-primary {
+    border-color: $gray-100;
+    --dxbl-toast-header-font-color: #2e2e2e !important;
+    --dxbl-toast-text-font-color: var(--bs-gray-800) !important;
+    .dxbl-toast-body {
+      .dxbl-toast-icon-column {
+        background-color: $gray-600;
+        mask-image: url('/images/icons/info.svg');
+      }
+    }
+  }
+  &.dxbl-toast-render-success {
+    --dxbl-toast-background-color: #e8f9f5;
+    --dxbl-toast-header-font-color: #0f8b6c !important;
+    --dxbl-toast-text-font-color: #0f8b6c !important;
+    --dxbl-toast-close-button-color: #0f8b6c !important;
+    --dxbl-toast-close-button-hover-color: #0f8b6c !important;
+    border-color: #c2f2ca;
+    .dxbl-toast-body {
+      .dxbl-toast-icon-column {
+        background-color: #0f8b6c;
+        mask-image: url('/images/icons/success.svg');
+      }
+      .dxbl-toast-close {
+        .dxbl-toast-close-btn {
+          &:hover {
+            background: transparent;
+            border-color: #c2f2ca;
+          }
+        }
+      }
+    }
+  }
+  &.dxbl-toast-render-info {
+    --dxbl-toast-background-color: #f8faff;
+    --dxbl-toast-header-font-color: #1b51b3 !important;
+    --dxbl-toast-text-font-color: #1b51b3 !important;
+    --dxbl-toast-close-button-color: #1b51b3 !important;
+    --dxbl-toast-close-button-hover-color: #1b51b3 !important;
+    border-color: #d6e1ff;
+    .dxbl-toast-body {
+      .dxbl-toast-icon-column {
+        background-color: #1b51b3;
+        mask-image: url('/images/icons/info.svg');
+      }
+      .dxbl-toast-close {
+        .dxbl-toast-close-btn {
+          &:hover {
+            background: transparent;
+            border-color: #d6e1ff;
+          }
+        }
+      }
+    }
+  }
+  &.dxbl-toast-render-danger {
+    --dxbl-toast-background-color: #feeeee;
+    --dxbl-toast-header-font-color: #a83b3b !important;
+    --dxbl-toast-text-font-color: #a83b3b !important;
+    --dxbl-toast-close-button-color: #a83b3b !important;
+    --dxbl-toast-close-button-hover-color: #a83b3b !important;
+    border-color: #ffe0e0;
+    .dxbl-toast-body {
+      .dxbl-toast-icon-column {
+        background-color: #a83b3b;
+        mask-image: url('/images/icons/warning.svg');
+      }
+      .dxbl-toast-close {
+        .dxbl-toast-close-btn {
+          &:hover {
+            background: transparent;
+            border-color: #ffe0e0;
+          }
+        }
+      }
+    }
+  }
+  &.dxbl-toast-render-warning {
+    --dxbl-toast-background-color: #fff9ee;
+    --dxbl-toast-header-font-color: #e86f00 !important;
+    --dxbl-toast-text-font-color: #e86f00 !important;
+    --dxbl-toast-close-button-color: #e86f00 !important;
+    --dxbl-toast-close-button-hover-color: #e86f00 !important;
+    border-color: #ffebc3;
+    .dxbl-toast-body {
+      .dxbl-toast-icon-column {
+        background-color: #e86f00;
+        mask-image: url('/images/icons/warning.svg');
+      }
+      .dxbl-toast-close {
+        .dxbl-toast-close-btn {
+          &:hover {
+            background: transparent;
+            border-color: #ffebc3;
+          }
+        }
+      }
+    }
+  }
+}
