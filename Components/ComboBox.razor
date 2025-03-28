@@ -1,13 +1,52 @@
 ﻿@rendermode InteractiveServer
 
-<section class="w-75 mx-auto">
-    <h3>Blazor Combo Box</h3>
-    <DxComboBox Data="@items" @bind-Value="@selectedValue" NullText="Choose a fruit" />
-</section>
+<div class="w-75 mx-auto d-flex flex-column gap-5">
+    <section>
+        <h3>Blazor Combo Box</h3>
+        <DxComboBox Data="@items" @bind-Value="@selectedValue" NullText="Choose a fruit" />
+    </section>
 
+
+    <section>
+        <h3>Blazor Combo Box DisplayTemplate</h3>
+        <DxComboBox Data="@icons" @bind-Value="@selectedIcon" NullText="Choose an option" TItem="IconItem">
+            <EditBoxDisplayTemplate Context="context">
+                <div class="d-flex align-items-center gap-2">
+                    <img src="@($"/images/icons/{context.DataItem.Icon}")" alt="@context.DataItem.Name" width="24"
+                        height="24" />
+                    @context.DataItem.Name
+                </div>
+            </EditBoxDisplayTemplate>
+
+            <ItemDisplayTemplate Context="context">
+                <div class="d-flex align-items-center gap-2">
+                    <img src="@($"/images/icons/{context.DataItem.Icon}")" alt="@context.DataItem.Name" width="20"
+                        height="20" />
+                    <span>@context.DataItem.Name</span>
+                </div>
+            </ItemDisplayTemplate>
+        </DxComboBox>
+    </section>
+</div>
 
 
 @code {
     private List<string> items = new() { "Apple", "Banana", "Cherry" };
     private string selectedValue;
+
+    private class IconItem
+    {
+        public string Name { get; set; }
+        public string Icon { get; set; }
+    }
+
+    private List<IconItem> icons = new() {
+new IconItem { Name = "Charts", Icon = "charts.svg" },
+new IconItem { Name = "Document", Icon = "document.svg" },
+new IconItem { Name = "Filters", Icon = "filters.svg" }
+};
+
+    private IconItem selectedIcon = new IconItem { Name = "Charts", Icon = "charts.svg" };
+
+
 }

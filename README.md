@@ -8,7 +8,6 @@ This is a Blazor Server application built with .NET, showcasing various UI compo
 
 ## Features
 
-- **Responsive Layout:** The application adapts to different screen sizes, providing a consistent user experience across devices.
 - **Sidebar Navigation:** A collapsible sidebar menu allows users to navigate between different sections of the application.
 - **Header with Actions:** The header includes a menu toggle button, a notification bell icon, and a user profile dropdown.
 - **DevExpress Blazor Components:** The project utilizes various DevExpress Blazor components, such as `DxGridLayout`, `DxButton`, `DxMenu`, `DxAccordion`, `DxTextBox`, `DxSearchBox`, `DxComboBox`, `DxDropDownButton`, and `DxDataGrid`.
