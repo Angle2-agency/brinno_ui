@@ -12,7 +12,7 @@
         <BodyContentTemplate>
             <h3 class="text-center">Are you sure you want to delete video0000543729.mp4 file?</h3>
         </BodyContentTemplate>
-        <FooterContentTemplate>
+        <FooterContentTemplate Context="footerContext">
             <div class="d-flex justify-content-center gap-2 w-100 pb-3">
                 <DxButton RenderStyle="ButtonRenderStyle.Light" CssClass="w-50" Text="Cancel"
                     Click="@(() => PopupVisible = false)" />
@@ -21,7 +21,6 @@
                     Delete file
                 </DxButton>
             </div>
-
         </FooterContentTemplate>
     </DxPopup>
 </section>
