@@ -1,3 +1,18 @@
+<style>
+    .delete-button:hover .delete-icon {
+        background-color: var(--bs-white);
+    }
+
+    .delete-icon {
+        width: 24px;
+        height: 24px;
+        background-color: var(--bs-danger);
+        mask-image: url('/images/icons/trash.svg');
+        mask-position: center;
+        mask-repeat: no-repeat;
+    }
+</style>
+
 <section class="container mx-auto">
     <h3>Modal</h3>
     <DxButton RenderStyle="ButtonRenderStyle.Dark" CssClass="w-50" Text="Open Modal"
@@ -16,10 +31,8 @@
             <div class="d-flex justify-content-center gap-2 w-100 pb-3">
                 <DxButton RenderStyle="ButtonRenderStyle.Light" CssClass="w-50" Text="Cancel"
                     Click="@(() => PopupVisible = false)" />
-                <DxButton RenderStyle="ButtonRenderStyle.Warning" CssClass="w-50" Click="@(() => PopupVisible = false)">
-                    <img src="/images/icons/trash.svg" alt="Delete">
-                    Delete file
-                </DxButton>
+                <DxButton RenderStyle="ButtonRenderStyle.Warning" CssClass="w-50 delete-button"
+                    IconCssClass="delete-icon" Text="Delete file" Click="@(() => PopupVisible = false)" />
             </div>
         </FooterContentTemplate>
     </DxPopup>

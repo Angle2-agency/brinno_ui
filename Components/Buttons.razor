@@ -83,6 +83,19 @@
 </section>
 
 <section>
+    <h3>Icon Buttons</h3>
+
+    <!--
+        Blazor does not have a built-in IconButton component, so add the "btn-icon" class to style it
+        as a button with an icon.
+    -->
+    <DxButton RenderStyle="ButtonRenderStyle.Light" SizeMode="SizeMode.Small" CssClass="btn-icon">
+        <!-- The icon is an SVG image -->
+        <img src="/images/icons/bell.svg" alt="Bell">
+    </DxButton>
+</section>
+
+<section>
     <h3>Toggle Buttons</h3>
     <DxButtonGroup SelectionMode="ButtonGroupSelectionMode.Single" RenderStyleMode="ButtonRenderStyleMode.Outline"
         RenderStyle="ButtonRenderStyle.Light">
