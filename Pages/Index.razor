@@ -5,6 +5,7 @@
 
 <div class="main-content">
     <div class="d-flex flex-column gap-5 text-center py-5">
+
         @* Typography *@
         <Typography />
 
@@ -36,8 +37,14 @@
             <Radios />
         </div>
 
-        @* Switchers *@
-        <Switchers />
+        <div class="d-flex align-items-start gap-2 w-75 mx-auto">
+            @* Switchers *@
+            <Switchers />
+
+            @* View Mode Switcher *@
+            <CustomViewModeSwitcher />
+        </div>
+
 
         @* Tabs *@
         <Tabs />

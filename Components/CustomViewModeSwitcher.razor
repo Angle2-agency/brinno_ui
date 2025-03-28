@@ -1,0 +1,24 @@
+<section class="w-50 mx-auto">
+    <h3>Custom View Mode Switcher</h3>
+    <div class="alert alert-warning" role="alert">
+        This is a custom component.
+        To apply styles, please add the <b>CssClass="view-mode-switcher"</b> to the component.
+        This will enable the custom styling and layout for the view mode switcher.
+    </div>
+
+
+    @* ========================================================================================
+        This is a custom component. 
+        To apply styles, please add the CssClass="view-mode-switcher" to the component.
+        This will enable the custom styling and layout for the view mode switcher. 
+        ==============================================================================================*@
+
+    <DxCheckBox CheckType="CheckType.Switch" Alignment="CheckBoxContentAlignment.Center" @bind-Checked="@CurrentMode"
+        CssClass="view-mode-switcher" />
+</section>
+
+@code {
+    string CurrentMode { get; set; } = "list";
+    IEnumerable<string> Mode = new[] { "list", "tile" };
+
+}
