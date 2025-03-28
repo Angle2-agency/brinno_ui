@@ -1,0 +1,142 @@
+<section class="container mx-auto">
+    <h3>Stacked Bar Chart</h3>
+
+    <DxChart T="PopulationAgeStructureItem" Data="@ChartData" Width="100%" Palette="@MyPalette">
+        @* <DxChartTitle Text="Population: Age Structure">
+            <DxChartSubTitle Text="Data Estimate for 2020" />
+            <h2>Scooter)Ok</h2>
+        </DxChartTitle> *@
+
+        <DxChartLegend Position="RelativePosition.Outside" Orientation="Orientation.Horizontal"
+            HorizontalAlignment="HorizontalAlignment.Center" VerticalAlignment="VerticalEdge.Top">
+            <DxChartTitle Text="Population: Age Structure">
+                <DxChartSubTitle Text="Data Estimate for 2020"> </DxChartSubTitle>
+            </DxChartTitle>
+        </DxChartLegend>
+
+
+
+
+        <DxChartStackedBarSeries T="PopulationAgeStructureItem" TArgument="string" TValue="int"
+            ArgumentField="pasi => pasi.Country" Name="0-14 years" ValueField="pasi => pasi.Population"
+            SummaryMethod="Enumerable.Sum" Filter='pasi => pasi.AgeGroup == "0-14 years"' />
+
+        <DxChartStackedBarSeries T="PopulationAgeStructureItem" TArgument="string" TValue="int"
+            ArgumentField="pasi => pasi.Country" Name="15-64 years" ValueField="pasi => pasi.Population"
+            SummaryMethod="Enumerable.Sum" Filter='pasi => pasi.AgeGroup == "15-64 years"' />
+
+        <DxChartStackedBarSeries T="PopulationAgeStructureItem" TArgument="string" TValue="int"
+            ArgumentField="pasi => pasi.Country" Name="65+ years" ValueField="pasi => pasi.Population"
+            SummaryMethod="Enumerable.Sum" Filter='pasi => pasi.AgeGroup == "65+ years"' />
+
+        <DxChartTooltip Enabled="true" Position="RelativePosition.Outside">
+            <div style="margin: 0.5rem">
+                <div class="fw-bold">@context.Point.Argument</div>
+                <div>Age Group: @context.Point.SeriesName</div>
+                <div>Population: @($"{context.Point.Value:N0}")</div>
+            </div>
+        </DxChartTooltip>
+
+    </DxChart>
+</section>
+
+@code {
+    // Дані для графіка
+    IEnumerable<PopulationAgeStructureItem> ChartData = new List<PopulationAgeStructureItem>
+{
+new("0-14 years", "USA", 50000000),
+new("15-64 years", "USA", 150000000),
+new("65+ years", "USA", 40000000),
+
+new("0-14 years", "Germany", 8000000),
+new("15-64 years", "Germany", 50000000),
+new("65+ years", "Germany", 20000000),
+
+new("0-14 years", "Japan", 9000000),
+new("15-64 years", "Japan", 70000000),
+new("65+ years", "Japan", 30000000),
+
+new("0-14 years", "France", 10000000),
+new("15-64 years", "France", 42000000),
+new("65+ years", "France", 18000000),
+
+new("0-14 years", "UK", 11000000),
+new("15-64 years", "UK", 46000000),
+new("65+ years", "UK", 17000000),
+
+new("0-14 years", "Canada", 7000000),
+new("15-64 years", "Canada", 30000000),
+new("65+ years", "Canada", 9000000),
+
+new("0-14 years", "Italy", 6000000),
+new("15-64 years", "Italy", 28000000),
+new("65+ years", "Italy", 13000000),
+
+new("0-14 years", "Spain", 7000000),
+new("15-64 years", "Spain", 29000000),
+new("65+ years", "Spain", 12000000),
+
+new("0-14 years", "Brazil", 25000000),
+new("15-64 years", "Brazil", 130000000),
+new("65+ years", "Brazil", 30000000),
+
+new("0-14 years", "Vietnam", 20000000),
+new("15-64 years", "Vietnam", 50000000),
+new("65+ years", "Vietnam", 10000000),
+
+new("0-14 years", "Thailand", 15000000),
+new("15-64 years", "Thailand", 45000000),
+new("65+ years", "Thailand", 12000000),
+
+new("0-14 years", "Australia", 5000000),
+new("15-64 years", "Australia", 25000000),
+new("65+ years", "Australia", 7000000),
+
+new("0-14 years", "Mexico", 25000000),
+new("15-64 years", "Mexico", 80000000),
+new("65+ years", "Mexico", 15000000),
+
+new("0-14 years", "Russia", 20000000),
+new("15-64 years", "Russia", 90000000),
+new("65+ years", "Russia", 25000000),
+
+new("0-14 years", "South Korea", 7000000),
+new("15-64 years", "South Korea", 37000000),
+new("65+ years", "South Korea", 10000000),
+
+new("0-14 years", "Argentina", 12000000),
+new("15-64 years", "Argentina", 38000000),
+new("65+ years", "Argentina", 8000000),
+
+new("0-14 years", "Turkey", 15000000),
+new("15-64 years", "Turkey", 55000000),
+new("65+ years", "Turkey", 9000000),
+
+new("0-14 years", "South Africa", 18000000),
+new("15-64 years", "South Africa", 40000000),
+new("65+ years", "South Africa", 5000000),
+
+new("0-14 years", "Saudi Arabia", 10000000),
+new("15-64 years", "Saudi Arabia", 25000000),
+new("65+ years", "Saudi Arabia", 3000000),
+
+new("0-14 years", "Indonesia", 50000000),
+new("15-64 years", "Indonesia", 120000000),
+new("65+ years", "Indonesia", 20000000)
+};
+
+    string[] MyPalette = { "#49AD5E", "#5A61F6", "#EE5345" };
+    public class PopulationAgeStructureItem
+    {
+        public string AgeGroup { get; }
+        public string Country { get; }
+        public int Population { get; }
+
+        public PopulationAgeStructureItem(string ageGroup, string country, int population)
+        {
+            AgeGroup = ageGroup;
+            Country = country;
+            Population = population;
+        }
+    }
+}

@@ -12908,6 +12908,26 @@ textarea.form-control-lg {
   display: none;
 }
 
+.dxbl-chart-root .dxbl-chart-legend.dxbl-chart-legend-horizontal.dxbl-chart-legend-align-center.dxbl-chart-legend-valign-top {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #e7e8e9;
+  background: #fff;
+  box-shadow: 0px 1px 3px 0px rgba(54, 45, 36, 0.06);
+}
+.dxbl-chart-root .dxbl-chart-legend.dxbl-chart-legend-horizontal.dxbl-chart-legend-align-center.dxbl-chart-legend-valign-top .dxbl-chart-legend-icon {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.25rem;
+}
+.dxbl-chart-root .dxbl-widget-container {
+  border-radius: 12px;
+  border: 1px solid #e7e8e9;
+  background: #fff;
+  box-shadow: 0px 1px 3px 0px rgba(54, 45, 36, 0.06);
+  padding: 1rem;
+}
+
 html,
 body {
   height: 100%;
