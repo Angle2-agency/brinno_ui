@@ -10,8 +10,8 @@ This is a Blazor Server application built with .NET, showcasing various UI compo
 
 - **Responsive Layout:** The application adapts to different screen sizes, providing a consistent user experience across devices.
 - **Sidebar Navigation:** A collapsible sidebar menu allows users to navigate between different sections of the application.
-- **Header with Actions:** The header includes a menu toggle button and a notification bell icon.
-- **DevExpress Blazor Components:** The project utilizes various DevExpress Blazor components, such as `DxGridLayout`, `DxButton`, `DxMenu`, `DxAccordion`, `DxTextBox`, `DxSearchBox`, `DxComboBox`, and `DxDropDownButton`.
+- **Header with Actions:** The header includes a menu toggle button, a notification bell icon, and a user profile dropdown.
+- **DevExpress Blazor Components:** The project utilizes various DevExpress Blazor components, such as `DxGridLayout`, `DxButton`, `DxMenu`, `DxAccordion`, `DxTextBox`, `DxSearchBox`, `DxComboBox`, `DxDropDownButton`, and `DxDataGrid`.
 - **Custom Styling:** The application uses a combination of SCSS and CSS to achieve a unique and consistent visual style.
 - **Bootstrap Integration:** Bootstrap classes are used for layout and styling, providing a familiar and robust foundation.
 - **Demonstration of UI Elements:** The `Index.razor` page demonstrates various HTML elements, Bootstrap components, and DevExpress Blazor components.
@@ -22,6 +22,14 @@ This is a Blazor Server application built with .NET, showcasing various UI compo
 - **Search Box:** A DevExpress search box is implemented.
 - **Combo Box:** A DevExpress combo box is implemented.
 - **DropDown Button:** A DevExpress drop-down button is implemented.
+- **Data Grid:** A DevExpress data grid is implemented to display tabular data with sorting and filtering capabilities.
+- **Alerts and Toasts:** Components for displaying alerts and toast notifications.
+- **Badges:** Components for displaying badges with customizable styles.
+- **Charts:** Components for rendering charts and visualizations.
+- **File Upload:** A component for uploading files.
+- **Modal Dialogs:** Components for displaying modal dialogs.
+- **Tabs and Switchers:** Components for tabbed navigation and view mode switching.
+- **Tables:** Components for displaying tabular data with custom styles.
 
 ## Technologies Used
 
@@ -64,9 +72,9 @@ This is a Blazor Server application built with .NET, showcasing various UI compo
 
 4.  **Install npm packages:**
 
-```bash
-npm install
-```
+    ```bash
+    npm install
+    ```
 
 ### Running the Application
 
@@ -92,7 +100,26 @@ npm install
 
 ## Project Structure
 
-- **`Pages/`:** Contains the Razor components for the application's pages (e.g., `Index.razor`).
+- **`Pages/`:** Contains the Razor components for the application's pages (e.g., `Index.razor`, `DataGridDemo.razor`).
+- **`Components/`:** Contains reusable UI components, such as:
+  - `Alerts.razor`
+  - `Badges.razor`
+  - `Buttons.razor`
+  - `Charts.razor`
+  - `CheckBoxes.razor`
+  - `ComboBox.razor`
+  - `CustomViewModeSwitcher.razor`
+  - `DropDownBox.razor`
+  - `FileUpload.razor`
+  - `Headers.razor`
+  - `Inputs.razor`
+  - `Modal.razor`
+  - `Radios.razor`
+  - `Switchers.razor`
+  - `Table.razor`
+  - `Tabs.razor`
+  - `Toasts.razor`
+  - `Typography.razor`
 - **`Shared/`:** Contains shared components and layouts (e.g., `MainLayout.razor`, `NavMenu.razor`).
 - **`wwwroot/`:** Contains static files like CSS, JavaScript, and images.
   - **`wwwroot/scss/`:** Contains SCSS files for styling.
