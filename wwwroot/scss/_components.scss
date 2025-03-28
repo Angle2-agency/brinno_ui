@@ -983,6 +983,10 @@
 
 // Toast
 .dxbl-toast-portal {
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  box-sizing: content-box;
   .dxbl-toast {
     &.dxbl-toast-theme-light {
       border-width: 1px;

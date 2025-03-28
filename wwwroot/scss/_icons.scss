@@ -1,0 +1,43 @@
+// Icons
+.icon {
+  width: 24px;
+  height: 24px;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  &-history {
+    mask-image: url('/images/icons/history.svg');
+  }
+  &-filters {
+    mask-image: url('/images/icons/filters.svg');
+  }
+  &-bell {
+    mask-image: url('/images/icons/bell.svg');
+  }
+}
+
+.dxbl-btn {
+  &:hover {
+    .dxbl-image.dxbl-btn-icon {
+      background-color: currentColor;
+    }
+  }
+  .icon {
+    background-color: $gray-600;
+  }
+}
+
+.dxbl-btn-icon-only.has-new {
+  position: relative;
+}
+.dxbl-btn-icon-only.has-new::after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--bs-primary);
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}

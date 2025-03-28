@@ -12751,6 +12751,12 @@ textarea.form-control-lg {
   border-color: #ffe0e0;
 }
 
+.dxbl-toast-portal {
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  box-sizing: content-box;
+}
 .dxbl-toast-portal .dxbl-toast.dxbl-toast-theme-light {
   border-width: 1px;
   border-style: solid;
@@ -13047,6 +13053,46 @@ textarea.form-control-lg {
 }
 .dxbl-checkbox.dxbl-checkbox-switch.view-mode-switcher.dxbl-checkbox-checked:hover .dxbl-checkbox-check-element::before, .dxbl-checkbox.dxbl-checkbox-switch.view-mode-switcher.dxbl-checkbox-unchecked:hover .dxbl-checkbox-check-element::before {
   background: #fff !important;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+}
+.icon-history {
+  mask-image: url("/images/icons/history.svg");
+}
+.icon-filters {
+  mask-image: url("/images/icons/filters.svg");
+}
+.icon-bell {
+  mask-image: url("/images/icons/bell.svg");
+}
+
+.dxbl-btn:hover .dxbl-image.dxbl-btn-icon {
+  background-color: currentColor;
+}
+.dxbl-btn .icon {
+  background-color: #6d6e73;
+}
+
+.dxbl-btn-icon-only.has-new {
+  position: relative;
+}
+
+.dxbl-btn-icon-only.has-new::after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--bs-primary);
+  position: absolute;
+  top: 8px;
+  right: 8px;
 }
 
 html,

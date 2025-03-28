@@ -1,0 +1,31 @@
+<section class="container mx-auto">
+    <h3>Header exemple</h3>
+
+    <div class="d-flex flex-column gap-2 bg-white border border-light p-2 rounded-2">
+        <div class="d-flex gap-2">
+            <DxSearchBox ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto"
+                NullText="Search by name or address" CssClass="flex-grow-1" aria-label="Search" />
+            <DxCheckBox CheckType="CheckType.Switch" Alignment="CheckBoxContentAlignment.Center"
+                @bind-Checked="@CurrentMode" CssClass="view-mode-switcher" />
+            <DxDropDownButton Text="Sort by" RenderStyle="ButtonRenderStyle.Light">
+                <Items>
+                    <DxDropDownButtonItem Text="Name (A-Z)" />
+                    <DxDropDownButtonItem Text="Name (Z-A)" />
+                    <DxDropDownButtonItem Text="Address (A-Z)" />
+                    <DxDropDownButtonItem Text="Address (Z-A)" />
+                </Items>
+            </DxDropDownButton>
+            <DxButton RenderStyle="ButtonRenderStyle.Light" Text="Filter" IconCssClass="icon icon-filters" />
+            <DxButton RenderStyle="ButtonRenderStyle.Light" IconCssClass="icon icon-history" />
+            <DxButton RenderStyle="ButtonRenderStyle.Light" Text="Butch Runner" Enabled="false" />
+
+            <DxButton RenderStyle="ButtonRenderStyle.Dark" Text="New Site" style="width: 120px" />
+
+        </div>
+
+    </div>
+</section>
+
+@code {
+    bool CurrentMode { get; set; } = false;
+}

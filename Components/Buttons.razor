@@ -85,18 +85,11 @@
 <section class="w-50 mx-auto">
     <h3>Icon Buttons</h3>
     <div class="alert alert-warning" role="alert">
-        Blazor does not have a built-in IconButton component, so add the <b>"btn-icon"</b> class to style it
-        as a button with an icon or use <b>"IconCssClass"</b>.
+        Use <b>IconCssClass="icon icon-name"</b> for icon buttons.
     </div>
 
-    <!--
-        Blazor does not have a built-in IconButton component, so add the "btn-icon" class to style it
-        as a button with an icon or use "IconCssClass".
-    -->
-    <DxButton RenderStyle="ButtonRenderStyle.Light" SizeMode="SizeMode.Small" CssClass="btn-icon">
-        <!-- The icon is an SVG image -->
-        <img src="/images/icons/bell.svg" alt="Bell">
-    </DxButton>
+
+    <DxButton RenderStyle="ButtonRenderStyle.Light" SizeMode="SizeMode.Small" IconCssClass="icon icon-bell" />
 </section>
 
 <section>

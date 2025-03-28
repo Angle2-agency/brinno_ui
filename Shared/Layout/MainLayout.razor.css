@@ -15,20 +15,7 @@
     z-index: 10;    
 }
 
-.btn.new {
-    position: relative;    
-}
-.btn.new::after {
-    content: "";
-    display: block;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: var(--bs-primary);
-    position: absolute;
-    top: 8px;
-    right: 12px;
-}
+
 
 .header h1 {
     margin: 0;
